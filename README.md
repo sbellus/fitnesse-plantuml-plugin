@@ -5,7 +5,7 @@ The project integrates plantuml into fitnesse wiki.
 # Installation
 
 1. Install Graphviz on machine where your Fitnesse is running.
-2. Copy jar file from this project Releases to plugins directory of your Fitnesse.
+2. Copy jar file from [this project Releases](https://github.com/sbellus/fitnesse-plantuml-plugin/releases) to plugins directory of your Fitnesse.
 3. Add following lines to plugins.properties of your Fitnesse
 ```
 {{{
