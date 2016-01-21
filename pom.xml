@@ -3,7 +3,7 @@
 
     <groupId>com.github.sbellus</groupId>
     <artifactId>fitnesse-plantuml-plugin</artifactId>
-    <version>0.1</version>
+    <version>0.2</version>
     <packaging>jar</packaging>
 
     <name>fitnesse-plantuml-plugin</name>
