@@ -23,14 +23,14 @@ plantuml.defaultStyle =                      \
 
 # Usage
 
-After installation you should be able to use command on wiki
+After installation and Fitnesse restart you should be able to use command on wiki
 ```
 !startuml
 fitnesse -> plantuml : generate
 !enduml
 ```
 
-The command !startuml has following syntax ```!startuml ["title"] [align] [width] [height]```
+The command ```!startuml``` has following syntax ```!startuml ["title"] [align] [width] [height]```
 * Title has to be surronded by "" 
 * align can be one of
   * c - center
