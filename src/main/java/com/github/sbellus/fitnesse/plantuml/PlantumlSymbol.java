@@ -1,19 +1,14 @@
 package com.github.sbellus.fitnesse.plantuml;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Properties;
 import java.util.regex.Pattern;
 
 import net.sourceforge.plantuml.FileFormat;
 import net.sourceforge.plantuml.FileFormatOption;
 import net.sourceforge.plantuml.SourceStringReader;
-
-import org.apache.commons.io.FileUtils;
 
 import fitnesse.html.HtmlTag;
 import fitnesse.html.RawHtml;
@@ -48,18 +43,10 @@ public class PlantumlSymbol extends SymbolType implements Rule, Translation {
      }
 
 	private String readDefaultPlantumlStyle(Properties properties) {
-		String defaultStyleFileRelativePath = properties.getProperty("plantuml.defaultStyle.file");
-
-		if (defaultStyleFileRelativePath != null) {
-			Path path = Paths.get(properties.getProperty("FITNESSE_ROOTPATH"), defaultStyleFileRelativePath);
-			File defaultStyleFile = new File(path.normalize().toString());
-			if (defaultStyleFile.exists()) {
-				try {
-					return FileUtils.readFileToString(defaultStyleFile);
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
+		String defaultStyle = properties.getProperty("plantuml.defaultStyle");
+		
+		if (defaultStyle != null) {
+			return defaultStyle + "\n";
 		}
 		
 		return "";
