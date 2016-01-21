@@ -11,7 +11,7 @@ The project integrates [Plantuml](http://plantuml.com/) into [Fitnesse](http://w
 {{{
 Plugins = com.github.sbellus.fitnesse.plantuml.PlantumlPlugin
 #
-# Configure plantuml default style.
+# Optionally configure plantuml default style.
 # Each line MUST BE ended with new line '\n' because it is forwarded to plantuml as it is defined here.
 plantuml.defaultStyle =                      \
     skinparam monochrome true \n             \
