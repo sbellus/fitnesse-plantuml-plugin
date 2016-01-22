@@ -122,42 +122,52 @@ public class PlantumlSymbol extends SymbolType implements Rule, Translation {
     }
 
     public String toTarget(Translator translator, Symbol symbol) {
-        HtmlTag newLine = new HtmlTag("br");
-        HtmlTag figure = new HtmlTag("figure");
-        HtmlTag body = new HtmlTag("div");
+
+        final HtmlTag newLine = new HtmlTag("br");
+        
+        HtmlTag plantuml = new HtmlTag("div");
+        HtmlTag plantumlHeader = new HtmlTag("div");
+        plantumlHeader.addAttribute("style", "display: block;margin: auto;");
+        
+        HtmlTag plantumlHolder = new HtmlTag("div");
+        plantumlHolder.addAttribute("class", "plantuml");
+        
+        String position = "left";
         if (symbol.hasProperty(PropertyAlign)) {
             if (symbol.getProperty(PropertyAlign).equals("c")) {
-                body.addAttribute("align", "center");
+                position =  "center";
             }
             if (symbol.getProperty(PropertyAlign).equals("r")) {
-                body.addAttribute("align", "right");
+                position =  "right";
             }
-            if (symbol.getProperty(PropertyAlign).equals("l")) {
-                body.addAttribute("align", "left");
-            }
-        }
-        HtmlTag table = new HtmlTag("table");
-        table.addAttribute("style", "border-style: none;");
-
-        HtmlTag row = new HtmlTag("tr");
-        row.addAttribute("style", "border-style: none;");
-        HtmlTag col = new HtmlTag("td");
-        col.addAttribute("style", "border-style: none;");
-        col.addAttribute("align", "center");
-        col.add(new RawHtml(symbol.getProperty(PropertyPictureAsSvg)));
-
+        }        
+        
+        plantumlHolder.addAttribute("style", "text-align: center;float: " + position + ";");
+        
+        HtmlTag plantumlPicture = new HtmlTag("div");
+        plantumlPicture.addAttribute("class", "plantuml_picture");
+        plantumlPicture.add(new RawHtml(symbol.getProperty(PropertyPictureAsSvg)));
+        plantumlHolder.add(plantumlPicture);
+        
         if (symbol.hasProperty(PropertyTitle)) {
-            col.add(newLine);
-            HtmlTag figcaption = new HtmlTag("figcaption");
-            figcaption.add(symbol.getProperty(PropertyTitle));
-            col.add(figcaption);
+            plantumlHolder.add(newLine);
+            HtmlTag caption = new HtmlTag("div");
+            caption.add(symbol.getProperty(PropertyTitle));
+            caption.addAttribute("class", "plantuml_caption");
+            caption.addAttribute("style", "font-style: italic;");
+            plantumlHolder.add(caption);
         }
 
-        figure.add(body);
-        body.add(table);
-        table.add(row);
-        row.add(col);
+        
+        plantumlHeader.add(plantumlHolder);
+        plantuml.add(plantumlHeader);
 
-        return figure.html();
+        // fix of html formatting
+        HtmlTag clearFix = new HtmlTag("div");
+        clearFix.addAttribute("style", "clear: both;");
+        
+        plantuml.add(clearFix);
+        
+        return plantuml.html();
     }
 }
