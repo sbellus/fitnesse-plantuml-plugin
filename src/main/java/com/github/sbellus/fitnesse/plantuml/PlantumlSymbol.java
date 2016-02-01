@@ -12,6 +12,7 @@ import net.sourceforge.plantuml.SourceStringReader;
 
 import fitnesse.html.HtmlTag;
 import fitnesse.html.RawHtml;
+import fitnesse.wiki.VariableTool;
 import fitnesse.wikitext.parser.Matcher;
 import fitnesse.wikitext.parser.Maybe;
 import fitnesse.wikitext.parser.Parser;
@@ -66,6 +67,10 @@ public class PlantumlSymbol extends SymbolType implements Rule, Translation {
         if (parser.atEnd())
             return Symbol.nothing;
 
+        // replace variables in content
+        VariableTool variableReplacer = new VariableTool(parser.getPage());
+        plantumlContext = variableReplacer.replace(plantumlContext);
+        
         // get picture attributes
         String width = null;
         String height = null;
