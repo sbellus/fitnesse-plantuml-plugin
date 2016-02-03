@@ -6,19 +6,19 @@ The project integrates [Plantuml](http://plantuml.com/) into [Fitnesse](http://w
 
 1. Install [Graphviz](http://www.graphviz.org/Download.php) on machine where your Fitnesse is running.
 2. Copy jar file from [this project Releases](https://github.com/sbellus/fitnesse-plantuml-plugin/releases) to plugins directory of your Fitnesse.
-3. Add following lines to plugins.properties of your Fitnesse
+
+## Configuration
+
+The configuration has to be stored in file fitnesse-graphviz-plugin.properties located in same directory as jar file. Usually in plugins directory of your Fitnesse.
+
+### Default style
+It is optional. When it is set in configuration file, all generated plantuml pictures will use this style. 
 ```
-{{{
-Plugins = com.github.sbellus.fitnesse.plantuml.PlantumlPlugin
-#
-# Optionally configure plantuml default style.
-# Each line MUST BE ended with new line '\n' because it is forwarded to plantuml as it is defined here.
-plantuml.defaultStyle =                      \
+defaultStyle =                               \
     skinparam monochrome true \n             \
     skinparam backgroundColor transparent \n \
     skinparam shadowing false \n             \
     hide footbox 
-}}} 
 ```
 
 # Usage
