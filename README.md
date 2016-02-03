@@ -6,6 +6,7 @@ The project integrates [Plantuml](http://plantuml.com/) into [Fitnesse](http://w
 
 1. Install [Graphviz](http://www.graphviz.org/Download.php) on machine where your Fitnesse is running.
 2. Copy jar file from [this project Releases](https://github.com/sbellus/fitnesse-plantuml-plugin/releases) to plugins directory of your Fitnesse.
+3. Restart Fitnesse
 
 ## Configuration
 
