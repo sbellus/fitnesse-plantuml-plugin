@@ -9,7 +9,7 @@ The project integrates [Plantuml](http://plantuml.com/) into [Fitnesse](http://w
 
 ## Configuration
 
-The configuration has to be stored in file fitnesse-graphviz-plugin.properties located in same directory as jar file. Usually in plugins directory of your Fitnesse.
+The configuration has to be stored in file ```fitnesse-plantuml-plugin.properties``` located in same directory as jar file. Usually in plugins directory of your Fitnesse.
 
 ### Default style
 It is optional. When it is set in configuration file, all generated plantuml pictures will use this style. 
