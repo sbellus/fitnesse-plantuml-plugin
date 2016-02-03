@@ -12,11 +12,15 @@ import fitnesse.wikitext.parser.SymbolProvider;
 public class PlantumlPlugin extends PluginFeatureFactoryBase {
     private Properties properties;
 
+    public PlantumlPlugin() {
+        this.properties = new Properties();
+    }
+    
     public PlantumlPlugin(Properties properties) {
         this.properties = properties;
     }
 
     public void registerSymbolTypes(SymbolProvider symbolProvider) throws PluginException {
-        symbolProvider.add(new PlantumlSymbol(properties));
+        symbolProvider.add(PlantumlSymbol.make(properties));
     }
 }
