@@ -19,7 +19,7 @@ public class PlantumlSymbol {
     }
     
     public PlantumlSymbol(Properties properties) {
-        convertor = new PlantumlConvertor(properties.getProperty("plantuml.defaultStyle"));
+        convertor = new PlantumlConvertor(properties.getProperty("defaultStyle"));
         symbol = new GraphicsSymbol("uml", convertor);
     }
 }
