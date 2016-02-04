@@ -41,3 +41,5 @@ The command ```!startuml``` has following syntax ```!startuml ["title"] [align] 
 * width is width in pixels 
 * height is height in pixels
 
+# Thanks
+I would like to thank [Tibor Trnovsky](https://sk.linkedin.com/in/tibor-trnovsky-b9774744) for idea how align picture in HTML with ```<div>``` tags ([GraphicsSvg.java](https://github.com/sbellus/fitnesse-plantuml-plugin/blob/master/src/main/java/com/github/sbellus/fitnesse/plantuml/graphics/GraphicsSvg.java)).
