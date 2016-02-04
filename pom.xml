@@ -7,6 +7,31 @@
     <packaging>jar</packaging>
 
     <name>fitnesse-plantuml-plugin</name>
+	<url>https://github.com/sbellus/fitnesse-plantuml-plugin</url>
+	<description>The plugin integrates Plantuml into Fitnesse wiki.</description>
+	
+	<licenses>
+		<license>
+			<name>The MIT License (MIT)</name>
+			<url>https://opensource.org/licenses/MIT</url>
+			<distribution>repo</distribution>
+			<comments>Permissive free software license.</comments>
+		</license>
+	</licenses>
+	
+	<developers>
+		<developer>
+			<name>Stefan Bellus</name>
+			<email>stevo.bellus@gmail.com</email>
+			<url>https://sk.linkedin.com/in/stefanbellus</url>
+		</developer>
+	</developers>	
+
+	<scm>
+		<connection>scm:git:git://github.com/sbellus/fitnesse-plantuml-plugin.git</connection>
+		<url>https://github.com/sbellus/fitnesse-plantuml-plugin.git</url>
+		<developerConnection>scm:git:git://github.com/sbellus/fitnesse-plantuml-plugin.git</developerConnection>
+	</scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
