@@ -19,14 +19,14 @@ public class GraphicsSvg {
         this.properties = new GraphicsProperties();
     }
 
-    public void ReadFromSymbol(Symbol symbol) {
+    public void readFromSymbol(Symbol symbol) {
         svg = symbol.getProperty(SymbolPropertySvg);
-        properties.ReadFromSymbol(symbol);
+        properties.readFromSymbol(symbol);
     }
 
-    public void WriteToSymbol(Symbol symbol) {
+    public void writeToSymbol(Symbol symbol) {
         symbol.putProperty(SymbolPropertySvg, svg);
-        properties.WriteToSymbol(symbol);
+        properties.writeToSymbol(symbol);
     }
 
     public String toHtml() {

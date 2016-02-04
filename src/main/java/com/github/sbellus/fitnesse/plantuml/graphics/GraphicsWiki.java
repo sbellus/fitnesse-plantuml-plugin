@@ -18,7 +18,7 @@ public class GraphicsWiki {
         this.specifier = specifier;
     }
 
-    public void ParseFromWiki(Parser parser) throws GraphicsWikiParserException {
+    public void parseFromWiki(Parser parser) throws GraphicsWikiParserException {
 
         String propertiesText = parser.parseToAsString(SymbolType.Newline).getValue();
         if (parser.atEnd()) {
@@ -34,7 +34,7 @@ public class GraphicsWiki {
             throw new GraphicsWikiParserException("No content for " + specifier);
         }
 
-        properties.ReadFromLine(propertiesText);
+        properties.readFromLine(propertiesText);
     }
 
     public void replaceVariables(GraphicsVariableReplacer replacer) {

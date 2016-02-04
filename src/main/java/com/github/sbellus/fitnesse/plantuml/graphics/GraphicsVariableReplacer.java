@@ -21,7 +21,7 @@ public class GraphicsVariableReplacer {
         return replaceVariablesRecursively(str);
     }
 
-    public String replaceVariablesRecursively(String str) {
+    private String replaceVariablesRecursively(String str) {
         boolean isAtLeastOneVariableReplaced = false;
         java.util.regex.Matcher m = VariablePattern.matcher(str);
         while (m.find()) {
@@ -40,5 +40,4 @@ public class GraphicsVariableReplacer {
 
         return str;
     }
-
 }

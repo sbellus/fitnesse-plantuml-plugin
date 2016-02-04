@@ -61,7 +61,7 @@ public class GraphicsProperties {
         return alignment;
     }
 
-    public void ReadFromLine(String line) {
+    public void readFromLine(String line) {
         Pattern pattern = Pattern.compile("[ \t]*(\".*\")?[ \t]*(l|r|c)?[ \t]*([0-9]+)?[ \t]*([0-9]+)?");
         Matcher matcher = pattern.matcher(line);
         if (matcher.matches()) {
@@ -84,7 +84,7 @@ public class GraphicsProperties {
         }
     }
 
-    public void ReadFromSymbol(Symbol symbol) {
+    public void readFromSymbol(Symbol symbol) {
         if (symbol.hasProperty(SymbolPropertyWidht)) {
             width = Integer.parseInt(symbol.getProperty(SymbolPropertyWidht));
         }
@@ -99,7 +99,7 @@ public class GraphicsProperties {
         }                        
     }
 
-    public void WriteToSymbol(Symbol symbol) {
+    public void writeToSymbol(Symbol symbol) {
         if (width != null) {
             symbol.putProperty(SymbolPropertyWidht, width.toString());
         }
