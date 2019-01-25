@@ -53,13 +53,13 @@
         <dependency>
             <groupId>org.fitnesse</groupId>
             <artifactId>fitnesse</artifactId>
-            <version>20150814</version>
+            <version>20190119</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>net.sourceforge.plantuml</groupId>
             <artifactId>plantuml</artifactId>
-            <version>8033</version>
+            <version>1.2019.0</version>
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
