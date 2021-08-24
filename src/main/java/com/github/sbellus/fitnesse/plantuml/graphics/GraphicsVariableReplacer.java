@@ -1,9 +1,9 @@
 package com.github.sbellus.fitnesse.plantuml.graphics;
 
+import java.util.Optional;
 import java.util.regex.Pattern;
 
-import fitnesse.wikitext.parser.Maybe;
-import fitnesse.wikitext.parser.VariableSource;
+import fitnesse.wikitext.VariableSource;
 
 public class GraphicsVariableReplacer {
     private static final Pattern VariablePattern = Pattern.compile("\\$\\{((?!\\$\\{).)*?\\}");
@@ -26,10 +26,10 @@ public class GraphicsVariableReplacer {
         java.util.regex.Matcher m = VariablePattern.matcher(str);
         while (m.find()) {
             String var = m.group();
-            Maybe<String> value = variableSource.findVariable(var.substring(2, var.length() - 1));
-            if (!value.isNothing()) {
+            Optional<String> value = variableSource.findVariable(var.substring(2, var.length() - 1));
+            if (value.isPresent()) {
                 isAtLeastOneVariableReplaced = true;
-                str = str.replace(var, value.getValue());
+                str = str.replace(var, value.get());
             }
         }
 
