@@ -53,7 +53,7 @@
         <dependency>
             <groupId>org.fitnesse</groupId>
             <artifactId>fitnesse</artifactId>
-            <version>20190119</version>
+            <version>20210606</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
