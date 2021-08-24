@@ -27,7 +27,7 @@ public class GraphicsVariableReplacer {
         while (m.find()) {
             String var = m.group();
             Optional<String> value = variableSource.findVariable(var.substring(2, var.length() - 1));
-            if (!value.isPresent()) {
+            if (value.isPresent()) {
                 isAtLeastOneVariableReplaced = true;
                 str = str.replace(var, value.get());
             }
